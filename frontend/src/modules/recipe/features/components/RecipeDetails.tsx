@@ -1,7 +1,14 @@
 import * as React from "react";
 import {Card, Col, Image, Row, Space, Typography} from "antd";
 import ItemProperty from "@modules/shared/features/components/ItemProperty";
-import {FieldTimeOutlined} from "@ant-design/icons";
+import {
+    ClockCircleOutlined,
+    FieldTimeOutlined,
+    PieChartOutlined,
+    PlusOutlined,
+    PrinterOutlined
+} from "@ant-design/icons";
+import CustomButton from "@modules/shared/features/components/CustomButton";
 
 const { Text, Title } = Typography;
 const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalTime, yield }) => {
@@ -17,7 +24,7 @@ const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalT
                     </Row>
                     <Row>
                         <Col md={8}>
-                            <ItemProperty icon={<FieldTimeOutlined />} title="PREP" value={prepTime}/>
+                            <ItemProperty icon={<ClockCircleOutlined />} title="PREP" value={prepTime}/>
                         </Col>
                         <Col md={8}>
                             <ItemProperty title="BAKE" value={bakeTime}/>
@@ -28,13 +35,13 @@ const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalT
                     </Row>
                     <Row>
                         <Col md={8}>
-
+                            <ItemProperty icon={<PieChartOutlined />} title="YIELD" value={yield}/>
                         </Col>
                         <Col md={8}>
-                            <ItemProperty title="BAKE" value={bakeTime}/>
+                            <CustomButton icon={<PlusOutlined />} content="SAVE RECIPE" />
                         </Col>
                         <Col md={8}>
-                            <ItemProperty title="TOTAL" value={totalTime}/>
+                            <CustomButton icon={<PrinterOutlined />} content="PRINT" />
                         </Col>
                     </Row>
                 </Col>
