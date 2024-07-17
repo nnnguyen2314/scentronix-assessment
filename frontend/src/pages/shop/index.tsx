@@ -8,10 +8,10 @@ const ShopPage: NextPage  = () => {
     return (
         <RootLayout>
             <div>Shop</div>
-            <div>
-                <ItemProperty title="test" value="test value"/>
-            </div>
-            <CustomButton className="test-btn" icon={<ShoppingCartOutlined />} content="Buy" type="primary"/>
+            {/*<div>*/}
+            {/*    <ItemProperty title="test" value="test value"/>*/}
+            {/*</div>*/}
+            {/*<CustomButton className="test-btn" icon={<ShoppingCartOutlined />} content="Buy" type="primary"/>*/}
         </RootLayout>
     )
 };

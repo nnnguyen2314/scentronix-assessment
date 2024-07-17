@@ -1,11 +1,7 @@
 import {AnyAction, combineReducers} from "@reduxjs/toolkit";
 import { HYDRATE } from 'next-redux-wrapper';
 
-import videoSlice from '@modules/video/store/videoSlice';
-
-export const combinedReducer = combineReducers({
-    video: videoSlice
-});
+export const combinedReducer = combineReducers({});
 
 const reducer = (state: ReturnType<typeof combinedReducer>, action: AnyAction) => {
     if (action.type === HYDRATE) {
