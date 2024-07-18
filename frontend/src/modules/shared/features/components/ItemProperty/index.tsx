@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Col, Row, Typography} from "antd";
+import {Col, Row, Space, Typography} from "antd";
 import styled from "styled-components";
 const { Text, Title } = Typography;
 
@@ -13,19 +13,25 @@ const StyledValue = styled(Text)`
   font-size: 12px;
 `;
 
+const StyledIconContainer = styled.div`
+    .anticon {
+       font-size: 25px;
+    }
+`
+
 const ItemProperty = ({ icon, title, value }) => {
     return (
-      <Row>
-          {icon && <Col>{icon}</Col>}
-          <Col>
+      <Space>
+          {icon && <StyledIconContainer>{icon}</StyledIconContainer>}
+          <div>
               <Row>
                   <StyledTitle>{title}</StyledTitle>
               </Row>
               <Row>
                   <StyledValue>{value}</StyledValue>
               </Row>
-          </Col>
-      </Row>
+          </div>
+      </Space>
     );
 };
 

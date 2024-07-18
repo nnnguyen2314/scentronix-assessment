@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
 import RootLayout from "@modules/shared/features/layout/RootLayout";
+import RecipeDetailsContainer from "@modules/recipe/features/containers/RecipeDetailsContainer";
 
 const RecipesPage: NextPage = () => {
     return (
       <RootLayout>
-          <div>Recipes</div>
+          <div>
+              <RecipeDetailsContainer />
+          </div>
       </RootLayout>
     );
 };

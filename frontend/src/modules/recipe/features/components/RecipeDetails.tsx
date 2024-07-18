@@ -9,20 +9,39 @@ import {
     PrinterOutlined
 } from "@ant-design/icons";
 import CustomButton from "@modules/shared/features/components/CustomButton";
+import styled from "styled-components";
 
 const { Text, Title } = Typography;
-const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalTime, yield }) => {
+
+const StyledTitleContainer = styled(Row)`
+    margin-bottom: 50px;
+`;
+
+const StyledDescriptionContainer = styled(Row)`
+    text-align: justify;
+`;
+
+const StyledInfoContainer = styled(Col)`
+    padding-right: 40px;
+`;
+
+const StyledCookInfoContainer = styled(Row)`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalTime, yieldValue }) => {
     return (
         <Card>
             <Row>
-                <Col md={12} sm={24}>
-                    <Row>
+                <StyledInfoContainer md={12} sm={24}>
+                    <StyledTitleContainer>
                         <Title level={1}>{name}</Title>
-                    </Row>
-                    <Row>
+                    </StyledTitleContainer>
+                    <StyledDescriptionContainer>
                         <Text>{description}</Text>
-                    </Row>
-                    <Row>
+                    </StyledDescriptionContainer>
+                    <StyledCookInfoContainer>
                         <Col md={8}>
                             <ItemProperty icon={<ClockCircleOutlined />} title="PREP" value={prepTime}/>
                         </Col>
@@ -32,10 +51,10 @@ const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalT
                         <Col md={8}>
                             <ItemProperty title="TOTAL" value={totalTime}/>
                         </Col>
-                    </Row>
+                    </StyledCookInfoContainer>
                     <Row>
                         <Col md={8}>
-                            <ItemProperty icon={<PieChartOutlined />} title="YIELD" value={yield}/>
+                            <ItemProperty icon={<PieChartOutlined />} title="YIELD" value={yieldValue}/>
                         </Col>
                         <Col md={8}>
                             <CustomButton icon={<PlusOutlined />} content="SAVE RECIPE" />
@@ -44,7 +63,7 @@ const RecipeDetails = ({ name, description, imageUrl, prepTime, bakeTime, totalT
                             <CustomButton icon={<PrinterOutlined />} content="PRINT" />
                         </Col>
                     </Row>
-                </Col>
+                </StyledInfoContainer>
                 <Col md={12} sm={24}>
                     <Image src={imageUrl} />
                 </Col>

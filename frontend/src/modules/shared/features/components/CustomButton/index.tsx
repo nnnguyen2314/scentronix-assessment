@@ -7,9 +7,20 @@ const { Text } = Typography;
 const StyledCustomButton = styled(Button)`
     &.custom-button {
       padding: 16px 24px;
+      
       .ant-typography {
         margin-left: 8px;
-        color: #ffffff;
+        color: #000000;
+      }
+      
+      &:hover {
+        border-color: #000000;
+        .ant-typography {
+          color: #000000;
+        }
+        .ant-btn-icon {
+          color: #000000;
+        }
       }
     }
 `;
